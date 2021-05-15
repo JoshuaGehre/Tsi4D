@@ -1,9 +1,12 @@
+// Tiling found by Joshua Gehre
+
 #include <algorithm>
 #include <numeric>
 #include <stdexcept>
 #include <stdio.h>
 #include <string>
 
+// Size of our box
 #define PeriodX 4
 #define PeriodY 20
 #define PeriodZ 20
@@ -17,6 +20,7 @@ void applyPB(int& val, int period)
 		val += period;
 }
 
+// Fill a single cell
 void fill(char* grid, int x, int y, int z, int w)
 {
 	applyPB(x, PeriodX);
@@ -33,7 +37,8 @@ void fill(char* grid, int x, int y, int z, int w)
 	grid[index] = 1;
 }
 
-// There are eight possible directions but we only need
+// There are eight possible directions where the cross
+// could be one block longer, but we only need
 // +y and -y so we'll just use a boolean for that
 void dali4d(char* grid, int x, int y, int z, int w, bool direction)
 {
