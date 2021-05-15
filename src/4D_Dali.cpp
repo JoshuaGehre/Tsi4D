@@ -127,4 +127,5 @@ int main()
 	}
 	// Clean up allocated memory
 	delete[] grid;
+	return 0;
 }
